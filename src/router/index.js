@@ -21,7 +21,7 @@ const routes = [
     component: EventosView
   },
   {
-    path: '/',
+    path: '/curso',
     name: 'curso',
     component: CursoView
   },

@@ -1,44 +1,41 @@
 <template>
   <nav>
-    <v-toolbar>
-      <v-app-bar color="#1B5E20" dark app>
-        <v-app-bar-nav-icon v-on:click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-spacer>
-          <v-toolbar-title class="text-uppercase text-center">
-            <h1>Licenciatura em Quimica</h1>
-          </v-toolbar-title>
-        </v-spacer>
-
-        <v-menu offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn text v-on="on">
-              <v-icon left></v-icon>
-              <span>Menu</span>
-            </v-btn>
-          </template>
-          <v-list flat>
-            <v-list-item
-              v-for="link in links"
-              :key="link.text"
-              router
-              :to="link.route"
-              active-class="border"
-            >
-              <v-list-item-title>{{ link.text }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <v-btn text>
-          <span>Sair</span>
-        </v-btn>
-      </v-app-bar>
-    </v-toolbar>
-
+    <v-app-bar color="#1B5E20" dark app>
+      <v-app-bar-nav-icon v-on:click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-spacer>
+        <v-toolbar-title class="text-uppercase">
+        <span>Licenciatura em Quimica</span>
+      </v-toolbar-title>
+      </v-spacer>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on }">
+          <v-btn text v-on="on">
+            <v-icon left ></v-icon>
+            <span>Menu</span>
+          </v-btn>
+        </template>
+        <v-list flat>
+          <v-list-item
+            v-for="link in links"
+            :key="link.text"
+            router
+            :to="link.route"
+            active-class="border"
+          >
+            <v-list-item-title>{{ link.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-btn text>
+        <span>Sair</span>
+        <v-icon right></v-icon>
+      </v-btn>
+    </v-app-bar>
     <v-navigation-drawer v-model="drawer" dark app color="#1B5E20">
       <v-layout column align-center>
-        <v-flex class="mt-5">
-          <v-avatar size="130">
-            <img src="../assets/avatar.png" alt="" />
+        <v-flex class="mt-5 text-center">
+          <v-avatar size="50">
+            <img src="../assets/avatar.png" alt=""/>
           </v-avatar>
           <p class="white--text subheading mt-1 text-center">Nome do usuário</p>
         </v-flex>
@@ -78,7 +75,7 @@ export default {
       { icon: "", text: "Egressos", route: "/egressos" },
       { icon: "", text: "Curso", route: "/curso" },
       { icon: "", text: "Docentes", route: "/docentes" },
-      { icon: "", text: "Sobre", route: "/sobre" },
+      { icon: "", text: "Sobre", route: "" }, //desabilitado por enquanto
     ],
   }),
   components: {
