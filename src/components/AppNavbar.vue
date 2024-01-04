@@ -7,7 +7,7 @@
         <span>Licenciatura em Quimica</span>
       </v-toolbar-title>
       </v-spacer>
-      <v-menu offset-y>
+      <!-- <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn text v-on="on">
             <v-icon left ></v-icon>
@@ -25,11 +25,7 @@
             <v-list-item-title>{{ link.text }}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu>
-      <v-btn text>
-        <span>Sair</span>
-        <v-icon right></v-icon>
-      </v-btn>
+      </v-menu> -->
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" dark app color="#1B5E20">
       <v-layout column align-center>
@@ -39,9 +35,7 @@
           </v-avatar>
           <p class="white--text subheading mt-1 text-center">Nome do usuário</p>
         </v-flex>
-        <v-flex class="mt-4 mb-4">
-          <Popup />
-        </v-flex>
+        
       </v-layout>
       <v-list flat>
         <v-list-item
@@ -59,6 +53,22 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      
+      <template v-slot:append>
+        <v-flex class="mt-4 mb-4">
+          <Popup />
+        </v-flex>
+          <div class="pa-2">
+            <v-btn block>
+              Login
+            </v-btn>
+          </div>
+          <div class="pa-2">
+            <v-btn block>
+              Sair
+            </v-btn>
+          </div>
+        </template>
     </v-navigation-drawer>
   </nav>
 </template>
