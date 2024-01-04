@@ -2,13 +2,12 @@
   <div class="eventos">
     <v-container>
       <v-layout row wrap class="mb-4">
-        <v-tooltip bottom>
+        <v-tooltip>
           <template v-slot:activator="{ on }">
             <v-btn
               small
-              outlined
               color="green"
-              @click="sortBy('data')"
+              v-on:click="sortBy('data')"
               class="mr-2"
               dark
               v-on="on"
@@ -16,7 +15,6 @@
               <span class="caption text-lowercase">Filtrar por data</span>
             </v-btn>
           </template>
-          <span></span>
         </v-tooltip>
       </v-layout>
       <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1">
