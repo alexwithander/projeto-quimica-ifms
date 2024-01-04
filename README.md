@@ -3,6 +3,9 @@
 ## Project setup
 ```
 npm install
+vue add route
+vue add vuetify
+npm install axios
 ```
 
 ### Compiles and hot-reloads for development
