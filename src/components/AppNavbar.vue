@@ -53,32 +53,19 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      
-      <template v-slot:append>
-        <v-flex class="mt-4 mb-4">
-          <Popup />
-        </v-flex>
-          <div class="pa-2">
-            <v-btn block>
-              Login
-            </v-btn>
-          </div>
-          <div class="pa-2">
-            <v-btn block>
-              Sair
-            </v-btn>
-          </div>
-        </template>
+          <LoginForm @login-admin="loginAdministrador" />
     </v-navigation-drawer>
   </nav>
 </template>
 
 <script>
-import Popup from "./AppPopup.vue";
+//import Popup from "./AppPopup.vue";
+import LoginForm from "@/components/LoginForm.vue";
 
 export default {
   data: () => ({
     drawer: false,
+   // mostrarLoginForm: false,
     links: [
       { icon: "", text: "Página Inicial", route: "/" },
       { icon: "", text: "Eventos", route: "/eventos" },
@@ -87,10 +74,20 @@ export default {
       { icon: "", text: "Docentes", route: "/docentes" },
       { icon: "", text: "Sobre", route: "" }, //desabilitado por enquanto
     ],
+    admins: [
+      {email:"", senha:""}
+    ]
   }),
   components: {
-    Popup,
+   // Popup,
+  LoginForm,
   },
+
+  methods:{
+    loginAdministrador(loginAdmin) {
+      this.admins.push(loginAdmin);
+    },
+  }
 };
 </script>
 
@@ -99,3 +96,7 @@ export default {
   border-left: 4px solid #0ba518;
 }
 </style>
+<style scoped>
+.v-dialog .v-sheet {
+  box-shadow: none;
+}

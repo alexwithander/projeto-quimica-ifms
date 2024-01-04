@@ -18,12 +18,18 @@
               prepend-icon=""
               :rules="inputRules"
             ></v-text-field>
-            <v-textarea
-              label="Informações"
+            <v-text-field
+              label="Organizador"
               v-model="content"
               prepend-icon=""
               :rules="inputRules"
-            ></v-textarea>
+            ></v-text-field>
+            <v-text-field
+              label="Status"
+              v-model="status"
+              prepend-icon=""
+              :rules="inputRules"
+            ></v-text-field>
             <v-col cols="12" lg="6">
               <v-menu
                 ref="menu1"
@@ -70,6 +76,7 @@ export default {
     dialog: false,
     title: "",
     content: "",
+    status:"",
     due: null,
     date: new Date().toISOString().substr(0, 10),
     dateFormatted: vm.formatDate(new Date().toISOString().substr(0, 10)),
@@ -88,6 +95,16 @@ export default {
 
       const [year, month, day] = date.split("/");
       return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+    },
+
+    submit(){
+      const novoEvento = {
+        evento: this.title,
+        organizador: this.content,
+        data: this.dateFormatted,
+        status:this.status,
+      }
+      this.$emit("novo-evento", novoEvento);
     },
   },
   computed: {

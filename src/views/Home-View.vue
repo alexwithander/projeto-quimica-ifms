@@ -9,8 +9,11 @@
         pode atuar na educação básica, em todas as modalidades de ensino, lecionando e
         desenvolvendo pesquisas como forma de produzir conhecimento relevante para área.
       </v-card-text>
+      
     </v-card>
-    <div></div>
+    
+    <br>
+    <Popup @novo-evento="adicionarNovoEvento" />
     <div class="eventos">
       <v-container>
         <v-layout row wrap class="mb-4">
@@ -43,6 +46,10 @@
               <div class="caption grey--text">Data</div>
               <div>{{ evento.data }}</div>
             </v-flex>
+            <v-flex xs6 sm4 md2>
+              <div class="caption grey--text">Status</div>
+              <div>{{ evento.status }}</div>
+            </v-flex>
           </v-layout>
         </v-card>
       </v-container>
@@ -51,9 +58,13 @@
 </template>
 
 <script>
+import Popup from "@/components/AppPopup.vue";
+
 export default {
   name: "eventosApp",
-  components: {},
+  components: {
+    Popup,
+  },
   data: () => ({
     eventos: [
       {
@@ -85,6 +96,9 @@ export default {
   methods: {
     sortBy(prop) {
       this.eventos.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
+    },
+    adicionarNovoEvento(novoEvento) {
+      this.eventos.push(novoEvento);
     },
   },
 };
