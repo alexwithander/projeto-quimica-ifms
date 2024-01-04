@@ -3,13 +3,6 @@
       <v-img src="../assets/topo-quimica.png" cover></v-img>
       <v-card-title class="text-h6 text-md-h5 text-lg-h4">História do Curso</v-card-title>
       <v-card-text class="text-justify">
-        O profissional formado no curso superior de Licenciatura em Química está apto a
-        trabalhar no processo de ensino e aprendizagem, identificando problemas, propondo
-        soluções e ajudando os estudantes na construção próprio conhecimento. O químico pode
-        atuar na educação básica, em todas as modalidades de ensino, lecionando e
-        desenvolvendo pesquisas como forma de produzir conhecimento relevante para área.
-      </v-card-text>
-      <v-card-text class="text-justify">
         No ano de 2011, o <strong>Instituto Federal de Mato Grosso do Sul, campus Coxim (IFMS – Coxim)</strong>, iniciou suas atividades, 
         autorizado pela <strong>Portaria nº 79, de 28 de janeiro.</strong> Provisoriamente funcionou na Escola Estadual Padre Nunes, espaço 
         cedido pela Secretaria de Estado de Educação de Mato Grosso do Sul (SED/MS). As primeiras turmas abertas foram de cursos 
