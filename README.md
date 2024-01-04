@@ -3,8 +3,7 @@
 ## Project setup
 ```
 npm install
-vue add router
-vue add vuetify
+
 npm install axios
 ```
 
