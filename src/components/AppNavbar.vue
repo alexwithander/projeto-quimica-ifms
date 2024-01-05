@@ -1,18 +1,18 @@
 <template>
   <nav>
-    <v-app-bar color="#1B5E20" dark app>
+    <v-app-bar app>
       <v-app-bar-nav-icon v-on:click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer>
         <v-toolbar-title class="text-uppercase">
-        <span>Licenciatura em Quimica</span>
+        <span>Licenciatura em Química</span>
       </v-toolbar-title>
       </v-spacer>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" dark app color="#1B5E20">
+    <v-navigation-drawer v-model="drawer" app>
       <v-layout column align-center>
         <v-flex class="mt-5 text-center">
-          <v-avatar size="50">
-            <img src="../assets/avatar.png" alt=""/>
+          <v-avatar size="150">
+            <img src="../assets/IFMS-LOGO-VERTICAL.png" alt=""/>
           </v-avatar>
           <p class="white--text subheading mt-1 text-center">{{ nomeAdmin }}</p>
         </v-flex>

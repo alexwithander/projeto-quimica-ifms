@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-img src="../assets/tubos-quimica.jpg" cover></v-img>
+      <v-img src="../assets/portal.png" cover></v-img>
       <v-card-text class="text-justify">
         O profissional formado no curso superior de Licenciatura em Química está apto a
         trabalhar no processo de ensino e aprendizagem, identificando problemas, propondo
@@ -9,10 +9,9 @@
         pode atuar na educação básica, em todas as modalidades de ensino, lecionando e
         desenvolvendo pesquisas como forma de produzir conhecimento relevante para área.
       </v-card-text>
-      
     </v-card>
-    
-    <br>
+
+    <br />
     <Popup @novo-evento="adicionarNovoEvento" />
     <div class="eventos">
       <v-container>
@@ -54,6 +53,20 @@
         </v-card>
       </v-container>
     </div>
+
+    <div>
+      <v-container>
+        <v-carousel height="400" hide-delimiters progress="primary">
+          <v-carousel-item v-for="(slide, i) in slides" :key="i">
+            <v-sheet height="100%">
+              <div class="d-flex fill-height justify-center align-center">
+                <div class="text-h2">{{ slide }}</div>
+              </div>
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
+    </div>
   </div>
 </template>
 
@@ -92,6 +105,13 @@ export default {
         status: "cancelado",
       },
     ],
+    slides: [
+          'imagem 1',
+          'imagem 2',
+          'imagem 3',
+          'imagem 4',
+          'imagem 5',
+        ],
   }),
   methods: {
     sortBy(prop) {
