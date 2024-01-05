@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-dialog v-model="dialog" max-width="800px">
+    <v-dialog v-model="dialog" max-width="450px">
       <template v-slot:activator="{ on }">
         <v-flex class="mt-4 mb-4">
           <div class="pa-2">
@@ -10,7 +10,8 @@
       </template>
       <v-card>
         <div>
-          <v-card class="mx-auto pa-12 pb-8" elevation="8" max-width="448" rounded="lg">
+          <v-card class="mx-auto pa-12 pb-8" elevation="8" max-width="448">
+            <div class="text-subtitle-1 text-medium-emphasis">Nome</div>
             <v-text-field
               density="compact"
               placeholder="Digite seu nome"
