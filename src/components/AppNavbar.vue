@@ -34,7 +34,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-          <LoginForm @login-admin="loginAdministrador" />
+          <LoginForm @login-admin="loginAdministrador" @fechar-dialog="fecharDialog" />
     </v-navigation-drawer>
   </nav>
 </template>
@@ -46,7 +46,6 @@ import LoginForm from "@/components/LoginForm.vue";
 export default {
   data: () => ({
     drawer: false,
-   // mostrarLoginForm: false,
     links: [
       { icon: "", text: "Página Inicial", route: "/" },
       { icon: "", text: "Eventos", route: "/eventos" },
@@ -70,6 +69,9 @@ export default {
       this.nomeAdmin = loginAdmin.nome;
       this.admins.push(loginAdmin);
     },
+    fecharDialog(){
+      this.drawer = false;
+    }
   }
 };
 </script>

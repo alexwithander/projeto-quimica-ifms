@@ -62,9 +62,12 @@
               </v-card-text>
             </v-card>
 
-            <v-btn block class="mb-8" color="blue" size="large" variant="tonal">
+            <v-btn block class="mb-8" color="blue" size="large" variant="tonal" @click="conectar" >
               Conectar
             </v-btn>
+            <v-alert v-if="erro" dense outlined type="error" class="mt-2">
+            Preencha todos os campos.
+            </v-alert>
           </v-card>
         </div>
       </v-card>
@@ -80,19 +83,22 @@ export default {
     email: "",
     senha: "",
     nome: "",
+    erro: false,
   }),
   methods: {
     conectar() {
       if (this.email && this.senha && this.nome) {
-      }
-    },
-    login() {
-      const loginAdmin = {
-        email: this.email,
-        senha: this.senha,
-        nome: this.nome,
-      };
-      this.$emit("login-admin", loginAdmin);
+        this.erro = false;
+        const loginAdmin = {
+            email: this.email,
+            senha: this.senha,
+            nome: this.nome
+        }
+        this.$emit("login-admin", loginAdmin);
+        this.$emit("fechar-dialog");
+        }else{
+            this.erro = true;
+        }
     },
   },
 };
