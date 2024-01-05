@@ -3,7 +3,7 @@
     <v-dialog v-model="dialog" max-width="800px">
       <template v-slot:activator="{ on }">
         <v-flex class="mt-4 mb-4">
-        <div class="pa-2">
+          <div class="pa-2">
             <v-btn dark block v-on="on">Painel administrativo</v-btn>
           </div>
         </v-flex>
@@ -11,7 +11,15 @@
       <v-card>
         <div>
           <v-card class="mx-auto pa-12 pb-8" elevation="8" max-width="448" rounded="lg">
-            <div class="text-subtitle-1 text-medium-emphasis">Administrador</div>
+            <v-text-field
+              density="compact"
+              placeholder="Digite seu nome"
+              prepend-inner-icon="mdi-account-outline"
+              variant="outlined"
+              v-model="nome"
+            ></v-text-field>
+
+            <div class="text-subtitle-1 text-medium-emphasis">Email</div>
 
             <v-text-field
               density="compact"
@@ -71,12 +79,18 @@ export default {
     visible: false,
     email: "",
     senha: "",
+    nome: "",
   }),
   methods: {
+    conectar() {
+      if (this.email && this.senha && this.nome) {
+      }
+    },
     login() {
       const loginAdmin = {
         email: this.email,
         senha: this.senha,
+        nome: this.nome,
       };
       this.$emit("login-admin", loginAdmin);
     },

@@ -14,7 +14,7 @@
           <v-avatar size="50">
             <img src="../assets/avatar.png" alt=""/>
           </v-avatar>
-          <p class="white--text subheading mt-1 text-center">Nome do usuário</p>
+          <p class="white--text subheading mt-1 text-center">{{ nomeAdmin }}</p>
         </v-flex>
         
       </v-layout>
@@ -56,8 +56,9 @@ export default {
       { icon: "", text: "Sobre", route: "" }, //desabilitado por enquanto
     ],
     admins: [
-      {email:"", senha:""}
-    ]
+      {email:"", senha:"", nome:""}
+    ],
+    nomeAdmin: "",
   }),
   components: {
    // Popup,
@@ -66,6 +67,7 @@ export default {
 
   methods:{
     loginAdministrador(loginAdmin) {
+      this.nomeAdmin = loginAdmin.nome;
       this.admins.push(loginAdmin);
     },
   }
