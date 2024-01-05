@@ -52,7 +52,7 @@ export default {
       { icon: "", text: "Egressos", route: "/egressos" },
       { icon: "", text: "Curso", route: "/curso" },
       { icon: "", text: "Docentes", route: "/docentes" },
-      { icon: "", text: "Sobre", route: "/sobre" }, //desabilitado por enquanto
+      { icon: "", text: "Contato", route: "/sobre" }, //desabilitado por enquanto
     ],
     admins: [
       {email:"", senha:"", nome:""}
