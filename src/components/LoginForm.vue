@@ -25,7 +25,7 @@
             <v-text-field
               density="compact"
               placeholder="Digite seu email"
-              prepend-inner-icon="mdi-email-outline"
+              
               variant="outlined"
               v-model="email"
             ></v-text-field>
