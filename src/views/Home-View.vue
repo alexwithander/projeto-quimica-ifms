@@ -32,7 +32,7 @@
           </v-tooltip>
         </v-layout>
         <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1">
-          <v-layout row wrap :class="`pa-3 evento ${evento.status}`">
+          <v-layout row wrap class="pa-3">
             <v-flex xs12 md6>
               <div class="caption grey--text">Evento</div>
               <div>{{ evento.evento }}</div>
@@ -45,11 +45,7 @@
               <div class="caption grey--text">Data</div>
               <div>{{ evento.data }}</div>
             </v-flex>
-            <v-flex xs6 sm4 md2>
-              <div class="caption grey--text">Status</div>
-              <div>{{ evento.status }}</div>
-            </v-flex>
-          </v-layout>
+            </v-layout>
         </v-card>
       </v-container>
     </div>
@@ -84,25 +80,21 @@ export default {
         evento: "Congresso brasileiro de quimica",
         organizador: "Organizador A",
         data: "06/08/2025",
-        status: "completo",
       },
       {
         evento: "Maratona de quimica",
         organizador: "Turma X",
         data: "05/08/2025",
-        status: "completo",
       },
       {
         evento: "Palestra: A quimica ensinou-me a olhar o mundo",
         organizador: "Palestrante X",
         data: "22/09/2025",
-        status: "iniciado",
       },
       {
         evento: "XII Semana da quimica",
         organizador: "Organizador C",
         data: "22/07/2025",
-        status: "cancelado",
       },
     ],
     slides: [
@@ -124,28 +116,5 @@ export default {
 };
 </script>
 <style>
-.evento.completo {
-  border-left: 4px solid #21a147;
-}
-.evento.no {
-  border-left: 4px solid orange;
-}
-.evento.cancelado {
-  border-left: 4px solid red;
-}
-.evento.iniciado {
-  border-left: 4px solid yellow;
-}
-.v-chip.completo {
-  color: #3cd1c2;
-}
-.p.ovnored {
-  color: orange;
-}
-.p.cancelado {
-  color: red;
-}
-.p.iniciado {
-  color: yellow;
-}
+
 </style>

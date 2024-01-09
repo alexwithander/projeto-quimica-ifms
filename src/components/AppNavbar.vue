@@ -11,9 +11,7 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-layout column align-center>
         <v-flex class="mt-5 text-center">
-          <v-avatar size="150">
-            <img src="../assets/IFMS-LOGO-VERTICAL.png" alt=""/>
-          </v-avatar>
+        <v-img src="../assets/ifms-cx-marca-2015.png"></v-img>
           <p class="white--text subheading mt-1 text-center">{{ nomeAdmin }}</p>
         </v-flex>
         
