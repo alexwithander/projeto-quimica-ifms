@@ -38,9 +38,9 @@ export default {
   data: () => ({
     docentes: [
       {
-        nome: "Mariane Ocanha",
-        titulo: "Doutora em ...",
-        avatar: require("../assets/docentes/IMG_4050-Mariane.png"),
+        nome: "Alexandre Geraldo Viana",
+        titulo: "Doutor em ...",
+        avatar: require("../assets/docentes/IMG_4053-Alexandre.png"),
         lates: "",
       },
       {
@@ -56,13 +56,6 @@ export default {
         lates: "",
       },
       {
-        nome: "Manoel Maria Soares de Lima",
-        titulo: "Mestre em ...",
-        avatar: require("../assets/docentes/IMG_4051-Manoel.png"),
-        lates: "",
-      },
-
-      {
         nome: "Geziel Rodrigues de Andrade",
         titulo: "Doutor em ...",
         avatar: require("../assets/docentes/IMG_4054-Geziel.png"),
@@ -75,12 +68,18 @@ export default {
         lates: "",
       },
       {
-        nome: "Alexandre Geraldo Viana",
-        titulo: "Doutor em ...",
-        avatar: require("../assets/docentes/IMG_4053-Alexandre.png"),
+        nome: "Manoel Maria Soares de Lima",
+        titulo: "Mestre em ...",
+        avatar: require("../assets/docentes/IMG_4051-Manoel.png"),
         lates: "",
       },
 
+      {
+        nome: "Mariane Ocanha",
+        titulo: "Doutora em ...",
+        avatar: require("../assets/docentes/IMG_4050-Mariane.png"),
+        lates: "",
+      },
       {
         nome: "Docente 8",
         titulo: "Mestre em ...",
