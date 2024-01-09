@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar app>
+    <v-app-bar flat app>
       <v-app-bar-nav-icon v-on:click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer>
         <v-toolbar-title class="text-uppercase">
