@@ -12,10 +12,8 @@
             <h2>{{ docente.nome }}</h2>
             <h4>{{ docente.titulo }}</h4>
             <div>
-            <a :href="docente.linkedin" target="_blank">Linkedin</a>
+            <a :href="docente.linkedin" target="_blank">Curriculo Lates</a>
             </div>
-            <div>link 2</div>
-            <div>link 3</div>
           </v-card-text>
         </v-card>
       </v-flex>
@@ -34,49 +32,49 @@ export default {
         nome: "Docente 1",
         titulo: "Mestre em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin: "https://www.linkedin.com/in/alexander-ifmscoxim/",
+        lates: "",
       },
       {
         nome: "Docente 2",
         titulo: "Doutor em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
       {
         nome: "Docente 3",
         titulo: "Especializado em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
       {
         nome: "Docente 4",
         titulo: "Mestre em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
       {
         nome: "Docente 5",
         titulo: "Mestre em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
       {
         nome: "Docente 6",
         titulo: "Mestre em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
       {
         nome: "Docente 7",
         titulo: "Mestre em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
       {
         nome: "Docente 8",
         titulo: "Mestre em ...",
         avatar: require("../assets/avatar.png"),
-        linkedin:"",
+        lates:"",
       },
     ],
   }),
