@@ -5,6 +5,8 @@
 npm install
 
 npm install axios
+
+npm install express body-parser mysql2 jsonwebtoken
 ```
 
 ### Compiles and hot-reloads for development
