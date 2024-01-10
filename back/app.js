@@ -1,3 +1,7 @@
+const loginRoute = require('./loginRoute');
+const eventosRoute = require('./eventosRoute');
+const docentesRoute = require('./docentesRoute');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
@@ -52,42 +56,13 @@ function verificarToken(req, res, next) {
     next();
   });
 } */
-app.post('/api/adicionarEvento', /* verificarToken, */ (req, res) => {
-  const novoEvento = {
-    evento: req.body.evento,
-    organizador: req.body.organizador,
-    data: req.body.data,
-  };
 
-  /// Adiciona o novo evento ao banco de dados
-  db.query('INSERT INTO eventos (evento, organizador, data) VALUES (?, ?, ?)', 
-    [novoEvento.evento, novoEvento.organizador, novoEvento.data], (err, result) => {
-      if (err) {
-        console.error('Erro ao adicionar evento:', err);
-        return res.status(500).json({ mensagem: 'Erro interno do servidor' });
-      }
+app.use('/api/login', loginRoute);
+app.use('/api/eventos', eventosRoute);
+app.use('/api/docentes', docentesRoute);
 
-      novoEvento.id = result.insertId;
 
-      res.json({ mensagem: 'Evento adicionado com sucesso', evento: novoEvento });
-  });
-});
-
-// Rota para listar todos os eventos
-app.get('/api/listarEventos', /* verificarToken, */ (req, res) => {
-  // Consulta a banco de dados para obter a lista de eventos
-  db.query('SELECT * FROM eventos', (err, results) => {
-    if (err) {
-      console.error('Erro na consulta ao banco de dados:', err);
-      return res.status(500).json({ mensagem: 'Erro interno do servidor' });
-    }
-
-    const eventos = results;
-
-    res.json({ eventos });
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+}); 
