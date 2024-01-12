@@ -5,7 +5,7 @@ import EventosView from '../views/Eventos-View.vue'
 import CursoView from '../views/Curso-View.vue'
 import EgressosView from '../views/Egressos-View.vue'
 import DocentesView from '../views/Docentes-View.vue'
-import SobreView from '../views/Sobre-View.vue'
+import ContatoView from '../views/Contatos-View.vue'
 
 Vue.use(VueRouter)
 
@@ -36,9 +36,9 @@ const routes = [
     component: DocentesView
   },
   {
-    path: '/sobre',
-    name: 'sobre',
-    component: SobreView
+    path: '/contatos',
+    name: 'contatos',
+    component: ContatoView
   },
 
 

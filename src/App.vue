@@ -2,7 +2,8 @@
   <v-app>
     <Navbar />
     <v-main class="ma-4">
-      <router-view></router-view>
+      <router-view>
+      </router-view>
     </v-main>
     <Footer></Footer>
   </v-app>

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <v-card>
-      <v-img src="../assets/portal.png" cover></v-img>
-      <v-card-text class="text-justify">
-        O profissional formado no curso superior de Licenciatura em Química está apto a
-        trabalhar no processo de ensino e aprendizagem, identificando problemas, propondo
-        soluções e ajudando os estudantes na construção próprio conhecimento. O químico
-        pode atuar na educação básica, em todas as modalidades de ensino, lecionando e
-        desenvolvendo pesquisas como forma de produzir conhecimento relevante para área.
-      </v-card-text>
-    </v-card>
-
+    <div>
+      <v-container>
+        <v-carousel cycle height="700" hide-delimiter-background show-arrows="hover">
+          <v-carousel-item v-for="(slide, i) in slides" :key="i">
+            <v-sheet height="100%">
+              <v-img :src="slide"></v-img>
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
+    </div>
     <br />
     <Popup @novo-evento="adicionarNovoEvento" />
     <div class="eventos">
@@ -45,22 +45,12 @@
               <div class="caption grey--text">Data</div>
               <div>{{ evento.data }}</div>
             </v-flex>
-            </v-layout>
+            <v-flex xs6 sm4 md2>
+              <div class="caption grey--text">Local/Sala</div>
+              <div>{{ evento.local }}</div>
+            </v-flex>
+          </v-layout>
         </v-card>
-      </v-container>
-    </div>
-
-    <div>
-      <v-container>
-        <v-carousel height="400" hide-delimiters progress="primary">
-          <v-carousel-item v-for="(slide, i) in slides" :key="i">
-            <v-sheet height="100%">
-              <div class="d-flex fill-height justify-center align-center">
-                <div class="text-h2">{{ slide }}</div>
-              </div>
-            </v-sheet>
-          </v-carousel-item>
-        </v-carousel>
       </v-container>
     </div>
   </div>
@@ -79,31 +69,35 @@ export default {
       {
         evento: "Congresso brasileiro de quimica",
         organizador: "Organizador A",
-        data: "06/08/2025",
+        data: "26/08/2024",
+        local: "Campo Grande - MS",
       },
       {
         evento: "Maratona de quimica",
         organizador: "Turma X",
-        data: "05/08/2025",
+        data: "15/09/2024",
+        local: "IFMS Campus Coxim",
       },
       {
         evento: "Palestra: A quimica ensinou-me a olhar o mundo",
         organizador: "Palestrante X",
-        data: "22/09/2025",
+        data: "06/03/2025",
+        local: "Auditório",
       },
       {
         evento: "XII Semana da quimica",
         organizador: "Organizador C",
         data: "22/07/2025",
+        local: "IFMS Campus Coxim",
       },
     ],
     slides: [
-          'imagem 1',
-          'imagem 2',
-          'imagem 3',
-          'imagem 4',
-          'imagem 5',
-        ],
+      require("../assets/FOTO_1.jpg"),
+      require("../assets/FOTO_2.jpg"),
+      // require("../assets/imagem3.png"),
+      // require("../assets/imagem4.png"),
+      // require("../assets/imagem5.png"),
+    ],
   }),
   methods: {
     sortBy(prop) {
@@ -116,5 +110,10 @@ export default {
 };
 </script>
 <style>
+.eventos{
+  text-align: justify;
+  
+  
+}
 
 </style>
