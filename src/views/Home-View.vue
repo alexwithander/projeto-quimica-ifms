@@ -64,41 +64,43 @@ export default {
   components: {
     Popup,
   },
-  data: () => ({
-    eventos: [
-      {
-        evento: "Congresso brasileiro de quimica",
-        organizador: "Organizador A",
-        data: "26/08/2024",
-        local: "Campo Grande - MS",
-      },
-      {
-        evento: "Maratona de quimica",
-        organizador: "Turma X",
-        data: "15/09/2024",
-        local: "IFMS Campus Coxim",
-      },
-      {
-        evento: "Palestra: A quimica ensinou-me a olhar o mundo",
-        organizador: "Palestrante X",
-        data: "06/03/2025",
-        local: "Auditório",
-      },
-      {
-        evento: "XII Semana da quimica",
-        organizador: "Organizador C",
-        data: "22/07/2025",
-        local: "IFMS Campus Coxim",
-      },
-    ],
-    slides: [
-      require("../assets/FOTO_1.jpg"),
-      require("../assets/FOTO_2.jpg"),
-      // require("../assets/imagem3.png"),
-      // require("../assets/imagem4.png"),
-      // require("../assets/imagem5.png"),
-    ],
-  }),
+  data() {
+    return {
+      eventos: [
+        {
+          evento: "Congresso brasileiro de quimica",
+          organizador: "Organizador A",
+          data: "26/08/2024",
+          local: "Campo Grande - MS",
+        },
+        {
+          evento: "Maratona de quimica",
+          organizador: "Turma X",
+          data: "15/09/2024",
+          local: "IFMS Campus Coxim",
+        },
+        {
+          evento: "Palestra: A quimica ensinou-me a olhar o mundo",
+          organizador: "Palestrante X",
+          data: "06/03/2025",
+          local: "Auditório",
+        },
+        {
+          evento: "XII Semana da quimica",
+          organizador: "Organizador C",
+          data: "22/07/2025",
+          local: "IFMS Campus Coxim",
+        },
+      ],
+      slides: [
+        require("../assets/FOTO_1.jpg"),
+        require("../assets/FOTO_2.jpg"),
+        // require("../assets/imagem3.png"),
+        // require("../assets/imagem4.png"),
+        // require("../assets/imagem5.png"),
+      ],
+    };
+  },
   methods: {
     sortBy(prop) {
       this.eventos.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
@@ -109,11 +111,9 @@ export default {
   },
 };
 </script>
-<style>
-.eventos{
-  text-align: justify;
-  
-  
-}
 
+<style scoped>
+.eventos {
+  text-align: justify;
+}
 </style>
