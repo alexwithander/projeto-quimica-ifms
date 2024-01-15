@@ -1,23 +1,26 @@
 <template>
   <v-app>
-    <Navbar />
-    <v-main class="ma-4">
+  <Navbar1 />
+    <!-- <Navbar /> -->
+    <v-main>
       <router-view>
       </router-view>
     </v-main>
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
   </v-app>
 </template>
 
 <script>
-import Navbar from "@/components/AppNavbar";
-import Footer from "@/components/AppFooter";
+//import Navbar from "@/components/AppNavbar";
+import Navbar1 from "@/components/AppNavbar-teste";
+//import Footer from "@/components/AppFooter";
 export default {
   name: "App",
 
   components: {
-    Navbar,
-    Footer,
+   // Navbar,
+    //Footer,
+    Navbar1
   },
 
   data: () => ({
@@ -25,3 +28,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+.v-application--wrap {
+  min-height: unset;
+}
+</style>

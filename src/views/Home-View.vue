@@ -1,20 +1,25 @@
 <template>
-  <div>
-    <div>
-      <v-container>
-        <v-carousel cycle height="700" hide-delimiter-background show-arrows="hover">
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-carousel cycle height="400" hide-delimiter-background show-arrows="hover">
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet height="100%">
-              <v-img :src="slide"></v-img>
+              <div class="d-flex fill-height justify-center aligh-center">
+                <v-img :src="slide"></v-img>
+              </div>
             </v-sheet>
           </v-carousel-item>
         </v-carousel>
-      </v-container>
-    </div>
-    <br />
-    <Popup @novo-evento="adicionarNovoEvento" />
-    <div class="eventos">
-      <v-container>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <Popup @novo-evento="adicionarNovoEvento" />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
         <v-layout row wrap class="mb-4">
           <v-tooltip>
             <template v-slot:activator="{ on }">
@@ -51,9 +56,9 @@
             </v-flex>
           </v-layout>
         </v-card>
-      </v-container>
-    </div>
-  </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -111,9 +116,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.eventos {
-  text-align: justify;
-}
-</style>
