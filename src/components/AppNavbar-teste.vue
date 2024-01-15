@@ -15,7 +15,7 @@
       </v-row>
       <v-spacer></v-spacer>
       <v-list class="d-flex d-sm-flex align-center" flat>
-        <v-list-item plain :ripple="false" link v-for="(menu, index) in menus" :key="index" :to="menu.route" class="d-none d-sm-flex">
+        <v-list-item color="primary" :ripple="false" link v-for="(menu, index) in menus" :key="index" :to="menu.route" class="d-none d-sm-flex">
           <v-list-item-title>{{ menu.titulo }}</v-list-item-title>
         </v-list-item>
         <v-dialog v-model="dialogVisible" max-width="500">
