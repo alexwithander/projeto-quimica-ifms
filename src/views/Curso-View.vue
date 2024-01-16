@@ -1,15 +1,22 @@
 <template>
-  <div>
-    <v-card>
-      <!-- <v-img src="../assets/1638895816906.jpg" cover height="500" aspect-ratio="16/9"></v-img>
+<v-container>
+    <v-row>
+      <v-col>
+        <v-card>
+      <v-img src="../assets/1638895816906.jpg" cover height="500" aspect-ratio="16/9"></v-img>
       <v-card-text class="text-justify">
         O profissional formado no curso superior de Licenciatura em Química está apto a
         trabalhar no processo de ensino e aprendizagem, identificando problemas, propondo
         soluções e ajudando os estudantes na construção próprio conhecimento. O químico
         pode atuar na educação básica, em todas as modalidades de ensino, lecionando e
         desenvolvendo pesquisas como forma de produzir conhecimento relevante para área.
-      </v-card-text> -->
-      <v-img src="../assets/topo-quimica.png" cover></v-img>
+      </v-card-text>
+    </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-img src="../assets/topo-quimica.png" cover></v-img>
       <v-card-title class="text-h6 text-md-h5 text-lg-h4">História do Curso</v-card-title>
       <v-card-text class="text-justify">
         No ano de 2011, o
@@ -40,6 +47,10 @@
         egressos a diplomação de licenciado em Química e foi reconhecido pela Portaria nº
         492, de 29 de junho de 2015, conforme publicação no Diário Oficial da União.
       </v-card-text>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
       <v-card-text class="text-justify">
         A primeira turma do curso ingressou no segundo semestre do ano de 2011, por meio
         de seleção feita pelo Sistema de Seleção Unificada (Sisu). Ingressaram 43 alunos
@@ -51,8 +62,9 @@
         quantidade de ingressantes por turma e o número de egressos referentes as turmas
         de 2011 a 2017. (essas informações precisarão ser atualizadas para 2023).
       </v-card-text>
-    </v-card>
-  </div>
+      </v-col>
+    </v-row>
+  </v-container> 
 </template>
 
 <script>

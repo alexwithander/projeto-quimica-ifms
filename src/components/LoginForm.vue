@@ -4,7 +4,7 @@
       <template v-slot:activator="{ on }">
         <v-flex class="mt-4 mb-4">
           <div class="pa-2">
-            <v-btn dark block v-on="on">Painel administrativo</v-btn>
+            <v-btn dark block v-on="on"><v-icon>mdi-login</v-icon></v-btn>
           </div>
         </v-flex>
       </template>

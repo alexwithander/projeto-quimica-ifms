@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <v-layout row wrap>
+    <v-row>
+      <v-col>
+      <v-layout row wrap>
       <v-flex xs12 sm6 md4 lg4 v-for="docente in docentes" :key="docente.nome">
         <v-card class="text-center ma-3">
           <v-responsive class="pt-4">
@@ -27,7 +29,9 @@
         </v-card>
       </v-flex>
     </v-layout>
-  </v-container>
+      </v-col>
+    </v-row>
+  </v-container> 
 </template>
 
 <script>
