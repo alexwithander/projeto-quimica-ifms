@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card flat v-for="(item, index) in items" :key="index">
-      <div class="cardcenter">{{ item.titulo }}+</div>
+      <div class="cardcenter">{{ item.titulo }}</div>
       <div class="cardcenter">{{ item.count }}+</div>
     </v-card>
   </div>
@@ -20,7 +20,7 @@ export default {
   methods: {
   incremento(item) {
     let interval = setInterval(() => {
-      if (item.count < parseInt(item.qtd.replace("", "+"))) {
+      if (item.count < parseInt(item.qtd.replace("+", ""))) {
         item.count++;
       } else {
         clearInterval(interval);
