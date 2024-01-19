@@ -1,9 +1,10 @@
 const express = require('express');
 const db = require('./db/connection');
 const router = express.Router();
+const verificarToken = require('./verificarToken');
 
 // Rota
-router.post('/adicionarEvento', (req, res) => {
+router.post('/adicionarEvento', verificarToken, (req, res) => {
   const novoEvento = {
     evento: req.body.evento,
     organizador: req.body.organizador,

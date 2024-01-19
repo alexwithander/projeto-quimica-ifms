@@ -1,9 +1,10 @@
 const express = require('express');
 const db = require('./db/connection');
 const router = express.Router();
+const verificarToken = require('./verificarToken');
 
 //Rota
-router.post('/adicionarDocente', (req, res) => {
+router.post('/adicionarDocente', verificarToken, (req, res) => {
   const novoDocente = {
     nome: req.body.nome,
     titulo: req.body.titulo,
