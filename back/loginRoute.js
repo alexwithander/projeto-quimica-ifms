@@ -19,7 +19,7 @@ router.post('/login', (req, res) => {
       const token = jwt.sign({ userId: user.id }, 'SECRET_KEY', { expiresIn: '2h' });
       console.log('Token Gerado:', token);
 
-      res.json({ mensagem: 'Login bem-sucedido', token });
+      res.json({ mensagem: 'Login bem sucedido', token });
     } else {
       res.status(401).json({ mensagem: 'Credenciais inválidas' });
     }
