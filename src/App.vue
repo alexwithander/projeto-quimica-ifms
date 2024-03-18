@@ -26,6 +26,10 @@ export default {
   data: () => ({
     //
   }),
+
+  mounted (){
+    console.log(this.$firebase)
+  }
 };
 </script>
 
