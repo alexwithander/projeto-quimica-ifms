@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
-import "firebase/auth";
-import "firebase/storage";
-import "firebase/database";
+import "firebase/compat/auth";
+import "firebase/compat/storage";
+import "firebase/compat/database";
 
 export const firebaseApp = firebase.initializeApp({
   apiKey: process.env.VUE_APP_API_KEY,
