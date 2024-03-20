@@ -6,6 +6,7 @@ import CursoView from '../views/Curso-View.vue'
 import EgressosView from '../views/Egressos-View.vue'
 import DocentesView from '../views/Docentes-View.vue'
 import ContatoView from '../views/Contatos-View.vue'
+import PainelAdminView from '../views/PainelAdministrativo-View.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/contatos',
     name: 'contatos',
     component: ContatoView
+  },
+  {
+    path: '/admin',
+    name: 'administracao',
+    component: PainelAdminView
   },
 
 

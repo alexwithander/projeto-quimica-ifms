@@ -1,5 +1,11 @@
 <template>
   <v-container>
+    <v-row v-if="userLoggedIn" align="center" justify="center">
+      <v-col cols="auto">
+        <v-btn color="primary" @click="adicionarEvento">Adicionar Novo Evento</v-btn>
+      </v-col>
+    </v-row>
+
     <v-row align="center" justify="center">
       <v-col v-for="(variant, i) in variants" :key="i" cols="auto">
         <v-card
@@ -68,6 +74,15 @@ export default {
   methods: {
     alternarCard(index) {
       this.$set(this.expandirCards, index, !this.expandirCards[index]);
+    },
+    adicionarEvento() {
+      // Lógica para adicionar um novo evento
+      // Por exemplo, redirecionar para uma página de adição de evento
+    },
+  },
+  computed: {
+    userLoggedIn() {
+      return !!window.uid; //lógica para verificar se o usuário está logado
     },
   },
 };

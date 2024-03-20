@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-carousel cycle height="400" hide-delimiter-background show-arrows="hover">
+        <v-carousel cycle height="400" hide-delimiter-background>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet height="100%">
               <div class="d-flex fill-height justify-center aligh-center">
@@ -13,7 +13,7 @@
         </v-carousel>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row v-if="userLoggedIn" >
       <v-col>
         <Popup @novo-evento="adicionarNovoEvento" />
       </v-col>
@@ -114,5 +114,10 @@ export default {
       this.eventos.push(novoEvento);
     },
   },
+  computed: {
+    userLoggedIn() {
+      return !!window.uid;
+    }
+  }
 };
 </script>

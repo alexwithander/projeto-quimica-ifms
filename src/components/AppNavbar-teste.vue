@@ -1,78 +1,78 @@
 <template>
   <v-app>
-      <v-app-bar app color="white" light elevation="0" elevation-on-scroll>
-        <v-app-bar-nav-icon
-          @click="drawer = !drawer"
-          class="d-flex d-sm-none"
-        ></v-app-bar-nav-icon>
-        <v-row>
-          <v-col cols="12">
-            <a href="https://www.ifms.edu.br/">
-              <img
-                class="mr-3"
-                :src="require('../assets/ifms-cx-marca-2015.png')"
-                height="40"
-              />
-            </a>
-            <img class="mr-3" :src="require('../assets/icone-quimica.png')" height="40" />
-            <a href="https://www.instagram.com/maratona_oficial_de_quimica/">
-              <img class="mr-3" :src="require('../assets/instagram.png')" height="20" />
-            </a>
-          </v-col>
-        </v-row>
-        <v-card flat>
-          <v-tabs class="d-none d-sm-flex" color="deep-purple-accent-4" align-tabs="end">
+    <v-app-bar app color="white" light elevation="0">
+      <v-app-bar-nav-icon
+        @click="drawer = !drawer"
+        class="d-flex d-sm-none"
+      ></v-app-bar-nav-icon>
+      <v-row>
+        <v-col cols="12">
+          <a href="https://www.ifms.edu.br/">
+            <img
+              class="mr-3"
+              :src="require('../assets/ifms-cx-marca-2015.png')"
+              height="40"
+            />
+          </a>
+          <img class="mr-3" :src="require('../assets/icone-quimica.png')" height="40" />
+          <a href="https://www.instagram.com/maratona_oficial_de_quimica/">
+            <img class="mr-3" :src="require('../assets/instagram.png')" height="20" />
+          </a>
+        </v-col>
+      </v-row>
+      <v-card flat>
+        <v-tabs class="d-none d-sm-flex" color="deep-purple-accent-4" align-tabs="end">
           <v-tab
             v-for="(menu, index) in menus"
-            :key="index"
+            :key="`menu_${index}`"
             :value="menu"
             :to="menu.route"
-            
           >
             {{ menu.titulo }}
           </v-tab>
-          <v-tab class="d-none d-sm-flex" >
-          <LoginForm @login-admin="loginAdministrador" @fechar-dialog="fecharDialog" />
+          <v-tab v-if="userLoggedIn">
+            <LogoutButton></LogoutButton>
           </v-tab>
+          <v-tab
+          v-else 
+        v-for="(admin, index) in admin"
+        :key="`admin_${index}`"
+        :value="admin"
+        :to="admin.route"
+      >
+        Painel Administrativo
+      </v-tab>
         </v-tabs>
-        </v-card>
-        <!-- <v-list class="d-flex d-sm-flex align-center" flat>
-        <v-list-item color="primary" :ripple="false" link v-for="(menu, index) in menus" :key="index" :to="menu.route" class="d-none d-sm-flex">
-          <v-list-item-title>{{ menu.titulo }}</v-list-item-title>
-        </v-list-item>
-        <v-dialog v-model="dialogVisible" max-width="500">
-          <template v-slot:activator="{ on }">
-            <v-list-item :ripple="false" class="d-none d-sm-flex" v-bind="on" text flat>
-            <LoginForm @login-admin="loginAdministrador" @fechar-dialog="fecharDialog" />
-            </v-list-item>
-          </template>
-        </v-dialog>
-      </v-list> -->
-      </v-app-bar>
+      </v-card>
+      
+    </v-app-bar>
 
     <v-navigation-drawer
       v-model="drawer"
       app
-      mobile-break-point="768"
+      mobile-breakpoint="768"
       disable-resize-watcher
     >
       <v-list-item><v-list-item-title>Menu</v-list-item-title></v-list-item>
       <v-divider></v-divider>
-      <v-list-item link v-for="(menu, index) in menus" :key="index" :to="menu.route">
+      <v-list-item link v-for="(menu, index) in menus" :key="`menu_${index}`" :to="menu.route">
         <v-list-item-title>{{ menu.titulo }}</v-list-item-title>
       </v-list-item>
+      <v-list-item link v-for="(admin, index) in admin" :key="`admin_${index}`" :to="admin.route">
+        <v-list-item-title>{{ admin.titulo }}</v-list-item-title>
+      </v-list-item>
+
       <br />
-      <v-btn text>
-        <LoginForm @login-admin="loginAdministrador" @fechar-dialog="fecharDialog" />
-      </v-btn>
     </v-navigation-drawer>
   </v-app>
 </template>
 <script>
-import LoginForm from "@/components/LoginForm";
+
+import LogoutButton from "@/components/LogoutButton";
+
 export default {
   components: {
-    LoginForm,
+   LogoutButton,
   },
   data() {
     return {
@@ -86,6 +86,7 @@ export default {
         { titulo: "Egressos", route: "/egressos" },
         { titulo: "Contato", route: "/contatos" },
       ],
+      admin: [{ titulo: "Painel Administrativo", route: "/admin" }],
       dialogVisible: false,
     };
   },
@@ -98,6 +99,11 @@ export default {
     },
     fecharDialog() {
       this.dialogVisible = false;
+    },
+  },
+  computed: {
+    userLoggedIn() {
+      return !!window.uid;
     },
   },
 };
