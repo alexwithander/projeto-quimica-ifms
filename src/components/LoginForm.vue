@@ -1,5 +1,10 @@
 <template>
   <v-row justify="center">
+
+    <template v-if="userLoggedIn">
+      <logout-button></logout-button>
+    </template>
+    
     <v-dialog v-model="dialog" max-width="450px">
       <template v-slot:activator="{ on }">
         <v-flex class="mt-4 mb-4">
@@ -47,24 +52,52 @@
 </template>
 
 <script>
+import LogoutButton from "@/components/LogoutButton";
+
 export default {
   name: 'LoginForm',
-  data: () => ({
-    dialog: false,
-    visible: false,
-    email: "",
-    senha: "",
-    nome: "",
-  }),
+  components: {
+    LogoutButton
+  },
+  data() {
+    return {
+      dialog: false,
+      visible: false,
+      email: "",
+      senha: "",
+      nome: "",
+    };
+  },
+  computed: {
+    userLoggedIn() {
+      return !!window.uid;
+    }
+  },
   methods: {
     async doLogin() {
       const { email, senha } = this;
       try {
         const res = await this.$firebase.auth().signInWithEmailAndPassword(email, senha);
+        window.uid = res.user.uid;
+        if (this.$route.name !== 'home') {
+          this.$router.push({ name: 'home' });
+        }
+        this.dialog = false;
         console.log("Usuário logado:", res.user.email);
       } catch (error) {
         console.log('Erro durante o login:', error);
       }
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    if (!window.uid) {
+      next();
+    } else {
+      next(vm => {
+        if (vm.$route.name !== 'home') {
+          vm.$router.push({ name: 'home' });
+        }
+      });
     }
   }
 };

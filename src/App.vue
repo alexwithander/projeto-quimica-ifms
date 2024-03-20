@@ -29,6 +29,13 @@ export default {
 
   mounted (){
     console.log(this.$firebase)
+    this.$firebase.auth().onAuthStateChanged(user => {
+      window.uid = user ? user.uid : null
+      this.isLogged = !!user
+
+      this.$router.push({ name: window.uid ? 'home' : 'login' })
+
+    })
   }
 };
 </script>
@@ -38,3 +45,5 @@ export default {
   min-height: unset;
 }
 </style>
+
+
