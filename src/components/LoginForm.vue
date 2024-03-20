@@ -99,6 +99,14 @@ export default {
         }
       });
     }
+  },
+  created() {
+    this.$firebase.auth().onAuthStateChanged(user => {
+      this.currentUser = user;
+      if (user) {
+        console.log("Usuário conectado:", user.email);
+      }
+    });
   }
 };
 </script>
