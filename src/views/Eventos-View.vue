@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    <v-row v-if="userLoggedIn" align="center" justify="center">
+    <v-row v-if="userLoggedIn" allign="center" justify="center">
       <v-col cols="auto">
         <v-btn color="primary" @click="adicionarEvento">Adicionar Novo Evento</v-btn>
       </v-col>
     </v-row>
 
-    <v-row align="center" justify="center">
+    <v-row allign="center" justify="center">
       <v-col v-for="(variant, i) in variants" :key="i" cols="auto">
         <v-card
           class="mx-auto ma-3 text-xs-center"
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import { userLoggedIn } from "@/firebase";
+import { firebaseApp } from '@/firebase/index';
 export default {
   data: () => ({
     expandirCards: Array.from({ length: 8 }, () => false),
@@ -81,9 +83,17 @@ export default {
     },
   },
   computed: {
-    userLoggedIn() {
-      return !!window.uid; //lógica para verificar se o usuário está logado
-    },
+  userLoggedIn() {
+    return !!firebaseApp.auth().currentUser;
   },
+},
+mounted() {
+    if (userLoggedIn) {
+      const currentUser = this.$firebase.auth().currentUser;
+      console.log(currentUser);
+    } else {
+      console.log("Usuário não está autenticado");
+    }
+  }
 };
 </script>

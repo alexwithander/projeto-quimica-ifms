@@ -3,7 +3,6 @@ import "firebase/compat/auth";
 import "firebase/compat/storage";
 import "firebase/compat/database";
 
-// inicialização do Firebase
 export const firebaseApp = firebase.initializeApp({
   apiKey: process.env.VUE_APP_API_KEY,
   authDomain: process.env.VUE_APP_AUTH_DOMAIN,
@@ -13,8 +12,7 @@ export const firebaseApp = firebase.initializeApp({
   appId: process.env.VUE_APP_APP_ID,
 });
 
-// configuração da persistência de autenticação
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
   .then(() => {
     console.log("Persistência de autenticação configurada com sucesso.");
   })
@@ -22,7 +20,6 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     console.error("Erro ao configurar a persistência de autenticação:", error);
   });
 
-// função para instalar o Firebase no Vue
 export default function install(Vue) {
   Object.defineProperty(Vue.prototype, "$firebase", {
     get() {
@@ -30,3 +27,10 @@ export default function install(Vue) {
     },
   });
 }
+let userLoggedIn = false; // Variável para rastrear o estado de autenticação do usuário
+
+firebase.auth().onAuthStateChanged(user => {
+  userLoggedIn = !!user; // Define o estado de autenticação do usuário com base na presença do usuário
+});
+
+export { userLoggedIn }; // Exporta a variável para ser acessada em outros lugares
