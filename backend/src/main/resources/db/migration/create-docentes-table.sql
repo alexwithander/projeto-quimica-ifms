@@ -1,0 +1,7 @@
+CREATE TABLE docentes (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(255) NOT NULL,
+titulo VARCHAR(255),
+avatar_url VARCHAR(255),
+lates VARCHAR(255)
+);

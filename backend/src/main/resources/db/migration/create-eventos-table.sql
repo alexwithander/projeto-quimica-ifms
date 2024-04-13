@@ -1,0 +1,6 @@
+CREATE TABLE eventos (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  evento VARCHAR(255) NOT NULL,
+  organizador VARCHAR(255) NOT NULL,
+  data DATE NOT NULL
+);
