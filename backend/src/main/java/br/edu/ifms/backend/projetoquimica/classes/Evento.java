@@ -1,8 +1,7 @@
 package br.edu.ifms.backend.projetoquimica.classes;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,7 +15,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 
 public class Evento {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String evento;
     private String organizador;
