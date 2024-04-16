@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import AdicionarPostagemView from '../components/AdicionarPostagem.vue'
 import HomeView from '../views/Home-View.vue'
 import EventosView from '../views/Eventos-View.vue'
 import CursoView from '../views/Curso-View.vue'
-import EgressosView from '../views/Egressos-View.vue'
+import EgressosView from '../views/egressos/Egressos-View.vue'
+import QtdEgressosView from '../views/egressos/QtdEgressos-View.vue';
 import DocentesView from '../views/Docentes-View.vue'
 import ContatoView from '../views/Contatos-View.vue'
 import PainelAdminView from '../views/PainelAdministrativo-View.vue'
+
 
 Vue.use(VueRouter)
 
@@ -46,6 +49,17 @@ const routes = [
     name: 'administracao',
     component: PainelAdminView
   },
+  {
+    path: '/adicionarpostagem',
+    name: 'adicionar',
+    component: AdicionarPostagemView
+  },
+  {
+    path: '/qtdegressos',
+    name: 'qtdegressos',
+    component: QtdEgressosView
+  },
+
 
 
 ]

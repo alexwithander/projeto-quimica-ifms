@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-carousel cycle height="400" hide-delimiter-background>
+        <v-carousel cycle hide-delimiter-background style="height: auto;">
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet height="100%">
               <div class="d-flex fill-height justify-center aligh-center">
@@ -13,7 +13,7 @@
         </v-carousel>
       </v-col>
     </v-row>
-    <v-row v-if="userLoggedIn" >
+    <v-row v-if="userLoggedIn">
       <v-col>
         <Popup @novo-evento="adicionarNovoEvento" />
       </v-col>
@@ -100,9 +100,9 @@ export default {
       slides: [
         require("../assets/FOTO_1.jpg"),
         require("../assets/FOTO_2.jpg"),
-        // require("../assets/imagem3.png"),
-        // require("../assets/imagem4.png"),
-        // require("../assets/imagem5.png"),
+        require("../assets/FOTO_3.jpg"),
+        require("../assets/FOTO_4.jpg"),
+        require("../assets/FOTO_5.jpg"),
       ],
     };
   },
@@ -117,7 +117,7 @@ export default {
   computed: {
     userLoggedIn() {
       return !!window.uid;
-    }
-  }
+    },
+  },
 };
 </script>
