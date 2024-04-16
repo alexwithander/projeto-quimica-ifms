@@ -1,7 +1,6 @@
 package br.edu.ifms.backend.projetoquimica.classes.usuarios;
 
 public enum UsuarioRole {
-
     ADMIN("admin"),
     USER("user");
 
@@ -10,8 +9,8 @@ public enum UsuarioRole {
     UsuarioRole(String role){
         this.role = role;
     }
+
     public String getRole(){
         return role;
     }
-
 }

@@ -1,6 +1,7 @@
 package br.edu.ifms.backend.projetoquimica.services;
 
 
+//import br.edu.ifms.backend.projetoquimica.repositorios.EventoRepo;
 import br.edu.ifms.backend.projetoquimica.repositorios.UsuarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

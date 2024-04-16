@@ -18,27 +18,25 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-
+@EqualsAndHashCode(of = "id")
 public class Usuario implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String login;
-    private String senha;
-
+    private String password;
     private UsuarioRole role;
+
+    public Usuario(String login, String password, UsuarioRole role){
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(this.role == UsuarioRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
-    }
-
-    @Override
-    public String getPassword() {
-        return "";
     }
 
     @Override
