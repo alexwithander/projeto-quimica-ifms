@@ -24,7 +24,7 @@ export default {
     return {
       items: [
         { titulo: "Egressos", qtd: "53", count: 0 },
-        { titulo: "Alunos Matriculados", qtd: "56", count: 0 },
+        { titulo: "Alunos Matriculados", qtd: "69", count: 0 },
       ],
     };
   },
