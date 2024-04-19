@@ -1,11 +1,25 @@
 <template>
-  <v-card flat class="pa-md-10 mx-lg-auto" color="white" width="1500px">
-    <v-card-title class="text-h6 text-md-h5 text-lg-h4"><strong>Contato</strong></v-card-title>
-    <v-card-text class="text-justify">
-      <h3><strong>Coordenador do Curso: </strong>Geziel Rodrigues de Andrade</h3>
-      <h3><strong>Email: </strong>coliq.cx@ifms.edu.br</h3>
+  <v-card
+    class="mx-auto my-8"
+    elevation="16"
+    max-width="344"
+  >
+    <v-card-item>
+      <v-card-title>
+        Geziel Rodrigues de Andrade
+      </v-card-title>
+
+      <v-card-subtitle>
+        Coordenador do Curso
+      </v-card-subtitle>
+    </v-card-item>
+
+    <v-card-text>
+      Email: coliq.cx@ifms.edu.br
     </v-card-text>
   </v-card>
+
+
 </template>
 
 <script>

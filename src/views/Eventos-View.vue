@@ -1,12 +1,6 @@
 <template>
   <v-container>
-    <v-row v-if="userLoggedIn" allign="center" justify="center">
-      <v-col cols="auto">
-        <v-btn color="primary" @click="adicionarEvento">Adicionar Novo Evento</v-btn>
-      </v-col>
-    </v-row>
-
-    <v-row allign="center" justify="center">
+    <v-row justify="center" >
       <v-col v-for="(variant, i) in variants" :key="i" cols="auto">
         <v-card
           class="mx-auto ma-3 text-xs-center"
@@ -16,55 +10,29 @@
         >
           <v-img src="../assets/icone-quimica.png" height="150px" cover></v-img>
 
-          <v-card-title class="text-center text-h6 mb-1">
+          <v-card-title >
             {{ variant }}
           </v-card-title>
 
-          <v-card-subtitle class="text-caption text-center">
+          <v-card-subtitle>
             Lorem Ipsum
           </v-card-subtitle>
 
           <v-card-actions>
-            <v-btn color="orange-lighten-2" variant="text"> Ver mais </v-btn>
-            <v-spacer></v-spacer>
-
-            <v-btn icon @click="alternarCard(i)" class="dark">
-              <v-icon>{{
-                expandirCards[i] ? "mdi-chevron-up" : "mdi-chevron-down"
-              }}</v-icon>
-            </v-btn>
+            <v-btn text plain>Ver mais</v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="expandirCards[i]">
-              <v-divider></v-divider>
-
-              <v-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-              </v-card-text>
-            </div>
-          </v-expand-transition>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
-
 <script>
-import { userLoggedIn } from "@/firebase";
-import { firebaseApp } from '@/firebase/index';
+
 export default {
   data: () => ({
-    expandirCards: Array.from({ length: 8 }, () => false),
     variants: [
       "XII Semana da quimica",
-      "Palestra: Historia da quimica",
+      "Palestra: História da quimica",
       "Maratona de quimica",
       "Congresso brasileiro de quimica",
       "Visita Técnica: Campo Grande",
@@ -74,26 +42,14 @@ export default {
     ],
   }),
   methods: {
-    alternarCard(index) {
-      this.$set(this.expandirCards, index, !this.expandirCards[index]);
-    },
-    adicionarEvento() {
-      // Lógica para adicionar um novo evento
-      // Por exemplo, redirecionar para uma página de adição de evento
-    },
+    
+  
   },
   computed: {
-  userLoggedIn() {
-    return !!firebaseApp.auth().currentUser;
-  },
+  
 },
 mounted() {
-    if (userLoggedIn) {
-      const currentUser = this.$firebase.auth().currentUser;
-      console.log(currentUser);
-    } else {
-      console.log("Usuário não está autenticado");
-    }
+   
   }
 };
 </script>

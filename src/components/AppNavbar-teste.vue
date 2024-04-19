@@ -30,20 +30,20 @@
           >
             {{ menu.titulo }}
           </v-tab>
-          <v-menu offset-y>
+          <v-menu offset-y flat text>
             <template v-slot:activator="{ on, attrs }">
               <v-tab text v-bind="attrs" v-on="on">Egressos</v-tab>
             </template>
-            <v-list>
-              <v-list-item link :to="{ path: '/egressos' }">
-                <v-list-item-title>Atuação profissional</v-list-item-title>
+            <v-list >
+              <v-list-item link :to="{ path: '/egressos' }" text>
+                <v-list-item-title >ATUAÇÃO PROFISSIONAL</v-list-item-title>
               </v-list-item>
-              <v-list-item link :to="{ path: '/qtdegressos' }">
-                <v-list-item-title>QtdEgressos</v-list-item-title>
+              <v-list-item link :to="{ path: '/qtdegressos' }" text>
+                <v-list-item-title>EGRESSOS</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
-          <v-tab :to="{ path: '/contatos' }">Contatos</v-tab>
+          <v-tab :to="{ path: '/contatos' }">informações do curso</v-tab>
 
           <v-tab v-if="isUserAuthenticated">
             <LogoutButton></LogoutButton>

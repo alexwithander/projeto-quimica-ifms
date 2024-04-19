@@ -1,19 +1,30 @@
 <template>
-  <div class="card-container">
-    <v-card flat v-for="(item, index) in items" :key="index" class="card-item">
-      <div class="card-title">{{ item.titulo }}</div>
-      <div class="card-count">{{ item.count }}+</div>
-    </v-card>
-  </div>
+  <v-container>
+    <v-row justify="center">
+      <v-col cols="12" sm="6" md="4" v-for="(item, index) in items" :key="index">
+        <v-card
+        class="mx-auto my-8"
+    elevation="16"
+    max-width="344"
+          align="center"
+        >
+          <v-card-title class="headline d-flex justify-center">{{ item.titulo }}</v-card-title>
+          <v-card-subtitle class="display-2">{{ item.count }}+</v-card-subtitle>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
+  watch: {
+  },
   data() {
     return {
       items: [
-        { titulo: "Egressos", qtd: "150", count: 0 },
-        { titulo: "Egressos cadastrados", qtd: "56", count: 0 },
+        { titulo: "Egressos", qtd: "53", count: 0 },
+        { titulo: "Alunos Matriculados", qtd: "56", count: 0 },
       ],
     };
   },
@@ -33,40 +44,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.card-item {
-  flex-basis: calc(50% - 40px);
-  margin: 20px;
-  padding: 20px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.card-item:hover {
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
-}
-
-.card-title {
-  text-align: center;
-  font-size: 35px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.card-count {
-  text-align: center;
-  font-size: 150px;
-  color: #ff6384;
-}
-</style>

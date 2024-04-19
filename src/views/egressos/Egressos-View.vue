@@ -9,6 +9,7 @@ export default {
       datacollection: {
         labels:
          ["Professor de Química", "Já atuou como professor", "Outras áreas"],
+         
         datasets: [
           {
             data: [59.1, 6.8, 34.1],
@@ -22,8 +23,8 @@ export default {
         maintainAspectRatio: false,
         title: {
           display: true,
-          text: "Atuação profissional",
-          fontSize: 35,
+          text: "ATUAÇÃO PROFISSIONAL",
+          fontSize: 25,
           fontColor: '#000000',
         
         },
