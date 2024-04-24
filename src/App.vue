@@ -11,7 +11,7 @@
 
 <script>
 
-import Navbar1 from "@/components/AppNavbar-teste";
+import Navbar1 from "@/components/AppNavbar";
 import Footer from "@/components/AppFooter";
 export default {
   name: "App",
