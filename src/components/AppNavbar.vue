@@ -43,13 +43,13 @@
               </v-list-item>
             </v-list>
           </v-menu>
-          <v-tab :to="{ path: '/contatos' }">informações do curso</v-tab>
+          <!-- <v-tab :to="{ path: '/contatos' }">informações do curso</v-tab>
 
           <v-tab v-if="isUserAuthenticated">
             <LogoutButton></LogoutButton>
           </v-tab>
 
-          <v-tab v-else @click="navigateToAdminPanel"> Painel Administrativo </v-tab>
+          <v-tab v-else @click="navigateToAdminPanel"> Painel Administrativo </v-tab> -->
         </v-tabs>
       </v-card>
     </v-app-bar>
@@ -74,11 +74,11 @@
   </v-app>
 </template>
 <script>
-import LogoutButton from "@/components/LogoutButton";
+//import LogoutButton from "@/components/LogoutButton";
 
 export default {
   components: {
-    LogoutButton,
+    //LogoutButton,
   },
   data() {
     return {
