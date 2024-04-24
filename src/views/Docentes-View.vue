@@ -1,26 +1,38 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col v-for="docente in docentes" :key="docente.nome" cols="12" sm="6" md="4" lg="3">
-        <v-card class="mx-auto my-2" max-width="300" color="grey lighten-3">
-          <v-img class="mx-auto rounded-circle" :width="200" aspect-ratio="1" cover :src="docente.avatar" >
+      <v-col
+        v-for="docente in docentes"
+        :key="docente.nome"
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <v-card class="mx-auto my-8" elevation="2" max-width="344" color="grey lighten-3">
+          <v-img
+            class="mx-auto rounded-circle"
+            width="200"
+            aspect-ratio="1"
+            cover
+            :src="docente.avatar"
+          >
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular indeterminate color="grey-lighten-5"></v-progress-circular>
               </v-row>
             </template>
           </v-img>
+
+          <v-card-title class="headline d-flex justify-center">{{ docente.nome }}</v-card-title>
+          <v-card-subtitle class="pl-4 pt-4 text-center">{{ docente.titulo }}</v-card-subtitle>        
           <v-card-text class="text-center">
-            <h2>{{ docente.nome }}</h2>
-            <h4>{{ docente.titulo }}</h4>
-            <div id="lates">
-              <a :href="docente.lates" target="_blank">Currículo Lattes</a>
-            </div>
+              <a class="lates" :href="docente.lates" target="_blank">Currículo Lattes</a>
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
-  </v-container> 
+  </v-container>
 </template>
 
 <script>
@@ -84,14 +96,12 @@ export default {
         avatar: require("../assets/docentes/IMG_4050-Mariane.png"),
         lates: " http://lattes.cnpq.br/7365065110662688",
       },
-
-
     ],
   }),
 };
 </script>
-<style>
-#lates {
+<style scoped>
+.lates {
   font-style: italic;
 }
 </style>

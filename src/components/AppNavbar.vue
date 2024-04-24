@@ -30,26 +30,54 @@
           >
             {{ menu.titulo }}
           </v-tab>
-          <v-menu offset-y flat text>
+          <v-menu offset-y flat text  >
             <template v-slot:activator="{ on, attrs }">
               <v-tab text v-bind="attrs" v-on="on">Egressos</v-tab>
             </template>
-            <v-list >
+            <v-list>
               <v-list-item link :to="{ path: '/egressos' }" text>
-                <v-list-item-title >ATUAÇÃO PROFISSIONAL</v-list-item-title>
+                <v-list-item-title>Atuação Profissional</v-list-item-title>
               </v-list-item>
               <v-list-item link :to="{ path: '/qtdegressos' }" text>
-                <v-list-item-title>EGRESSOS</v-list-item-title>
+                <v-list-item-title>Egressos</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
-          <!-- <v-tab :to="{ path: '/contatos' }">informações do curso</v-tab>
+          <v-menu offset-y flat text>
+            <template v-slot:activator="{ on, attrs }">
+              <v-tab text v-bind="attrs" v-on="on">Informações do Curso</v-tab>
+            </template>
+            <v-list>
+              <v-list-item link :to="{ path: '/contatos' }" text>
+                <v-list-item-title>Contatos</v-list-item-title>
+              </v-list-item>
+              <v-list-item link :to="{ path: '/grade-curricular' }" text>
+                <v-list-item-title>Grade Curricular</v-list-item-title>
+              </v-list-item>
+              <v-list-item
+                link
+                href="http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=30/06/2015&jornal=1&pagina=15&totalArquivos=88"
+                target="_blank"
+                text
+              >
+                <v-list-item-title>Portaria de Reconhecimento</v-list-item-title>
+              </v-list-item>
+              <v-list-item
+                link
+                href="https://www.ifms.edu.br/centrais-de-conteudo/documentos-institucionais/projetos-pedagogicos/projetos-pedagogicos-dos-cursos-de-graduacao/projeto-pedagogico-do-curso-superior-licenciatura-quimica-coxim.pdf"
+                target="_blank"
+                text
+              >
+                <v-list-item-title>PPC</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
 
-          <v-tab v-if="isUserAuthenticated">
+          <!-- <v-tab>
             <LogoutButton></LogoutButton>
           </v-tab>
 
-          <v-tab v-else @click="navigateToAdminPanel"> Painel Administrativo </v-tab> -->
+          <v-tab> Painel Administrativo </v-tab> -->
         </v-tabs>
       </v-card>
     </v-app-bar>
@@ -94,17 +122,7 @@ export default {
       ],
     };
   },
-  methods: {
-    navigateToAdminPanel() {
-      // Redirecionar para o painel administrativo
-      this.$router.push({ path: "/admin" });
-    },
-  },
-  computed: {
-    // Verificar se o usuário está autenticado
-    isUserAuthenticated() {
-      return this.$firebase.auth().currentUser;
-    },
-  },
+  methods: {},
+  computed: {},
 };
 </script>

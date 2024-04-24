@@ -7,7 +7,7 @@ import CursoView from '../views/Curso-View.vue'
 import EgressosView from '../views/egressos/Egressos-View.vue'
 import QtdEgressosView from '../views/egressos/QtdEgressos-View.vue';
 import DocentesView from '../views/Docentes-View.vue'
-import ContatoView from '../views/Contatos-View.vue'
+import ContatoView from '../views/informações do curso/Contatos-View.vue'
 import PainelAdminView from '../views/PainelAdministrativo-View.vue'
 
 

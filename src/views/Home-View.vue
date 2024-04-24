@@ -2,18 +2,19 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-carousel cycle hide-delimiter-background style="height: auto;">
+        <v-carousel>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
-            <v-sheet height="100%">
-              <div class="d-flex fill-height justify-center aligh-center">
-                <v-img :src="slide"></v-img>
-              </div>
-            </v-sheet>
-          </v-carousel-item>
+              <v-img
+              class="bg-grey-lighten-2"
+              max-height="500"
+              :src="slide"
+              cover
+            ></v-img>
+            </v-carousel-item>
         </v-carousel>
       </v-col>
     </v-row>
-    <v-row v-if="userLoggedIn">
+    <v-row>
       <v-col>
         <Popup @novo-evento="adicionarNovoEvento" />
       </v-col>
@@ -28,7 +29,6 @@
                 color="green"
                 v-on:click="sortBy('data')"
                 class="mr-2"
-                dark
                 v-on="on"
               >
                 <span class="caption text-lowercase">Filtrar por data</span>
@@ -36,8 +36,8 @@
             </template>
           </v-tooltip>
         </v-layout>
-        <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1">
-          <v-layout row wrap class="pa-3">
+        <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1" dark>
+          <v-layout row wrap class="pa-4">
             <v-flex xs12 md6>
               <div class="caption grey--text">Evento</div>
               <div>{{ evento.evento }}</div>
@@ -114,10 +114,6 @@ export default {
       this.eventos.push(novoEvento);
     },
   },
-  computed: {
-    userLoggedIn() {
-      return !!window.uid;
-    },
-  },
+  computed: {},
 };
 </script>
