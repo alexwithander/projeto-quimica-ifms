@@ -36,7 +36,7 @@
             </template>
           </v-tooltip>
         </v-layout>
-        <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1" dark>
+        <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1">
           <v-layout row wrap class="pa-4">
             <v-flex xs12 md6>
               <div class="caption grey--text">Evento</div>
