@@ -15,6 +15,7 @@
         <Popup @novo-evento="adicionarNovoEvento" />
       </v-col>
     </v-row>
+    <br>
     <v-row>
       <v-col>
         <v-layout row wrap class="mb-4">
