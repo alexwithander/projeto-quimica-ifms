@@ -10,6 +10,7 @@ import DocentesView from '../views/Docentes-View.vue'
 import ContatoView from '../views/informações do curso/Contatos-View.vue'
 import PainelAdminView from '../views/PainelAdministrativo-View.vue'
 import MatrizCurricularView from '../views/informações do curso/GradeCurricular-View.vue'
+import GaleriaFotosView from '../views/eventos/galeria/GaleriaFotos-View.vue'
 
 
 Vue.use(VueRouter)
@@ -65,7 +66,11 @@ const routes = [
     name: 'grade-curricular',
     component: MatrizCurricularView
   },
-
+{
+    path: '/galeria-fotos',
+    name: 'galeria-fotos',
+    component: GaleriaFotosView
+  },
 
 
 ]

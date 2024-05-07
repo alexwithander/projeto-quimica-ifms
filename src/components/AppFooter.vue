@@ -1,7 +1,7 @@
 <template>
   <v-footer dark padless app inset>
-    <v-card class="flex" flat color="white" :elevation="10">
-      <v-card-text class="py-2 black--text text-center">
+    <v-card class="flex" flat color="#034811" :elevation="10">
+      <v-card-text class="py-2 white--text text-center">
         <strong>
           {{ new Date().getFullYear() }} — Licenciatura em Quimica - IFMS Campus
           Coxim</strong

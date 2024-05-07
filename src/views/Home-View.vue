@@ -1,18 +1,17 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col>
-        <v-carousel height="auto" width="auto">
+        <v-carousel height="400" hide-delimiters>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
               <v-img
               class="bg-grey-lighten-2"
               :src="slide"
-              aspect-ratio="1.77"
+              aspect-ratio="3"
+              
+              contain
             ></v-img>
             </v-carousel-item>
         </v-carousel>
-      </v-col>
-    </v-row>
+    <br>
     <v-row>
       <v-col>
         <Popup @novo-evento="adicionarNovoEvento" />

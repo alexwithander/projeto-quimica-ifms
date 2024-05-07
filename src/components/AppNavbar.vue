@@ -13,13 +13,17 @@
             height="40"
           />
         </a>
-        <img class="img-logo" :src="require('../assets/icone-quimica.png')" height="40" />
+        <img
+          class="img-logo"
+          :src="require('../assets/LICENCIATURA-LOGO.png')"
+          height="40"
+        />
         <a href="https://www.instagram.com/licenciatura_quimica_ifcx/">
           <img class="img-logo" :src="require('../assets/instagram.png')" height="20" />
         </a>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-tabs class="d-none d-sm-flex justify-center" color="white">
+      <v-tabs class="d-none d-sm-flex justify-end" color="white" >
         <v-tab
           v-for="(menu, index) in menus"
           :key="`menu_${index}`"
@@ -32,8 +36,25 @@
         <v-menu offset-y flat text>
           <template v-slot:activator="{ on, attrs }">
             <v-tab class="white--text" text v-bind="attrs" v-on="on">
+              EVENTOS
+              <v-icon color="white">mdi-chevron-down</v-icon>
+            </v-tab>
+          </template>
+          <v-list>
+            <v-list-item link :to="{ path: '/eventos' }" text>
+              <v-list-item-title>Eventos</v-list-item-title>
+            </v-list-item>
+
+            <v-list-item link :to="{ path: '/galeria-fotos' }" text>
+              <v-list-item-title>Galeria de Fotos</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-menu offset-y flat text>
+          <template v-slot:activator="{ on, attrs }">
+            <v-tab class="white--text" text v-bind="attrs" v-on="on">
               CURSO
-              <v-icon color="white" >mdi-chevron-down</v-icon>
+              <v-icon color="white">mdi-chevron-down</v-icon>
             </v-tab>
           </template>
 
@@ -41,11 +62,8 @@
             <v-list-item link :to="{ path: '/curso' }" text>
               <v-list-item-title>História do curso</v-list-item-title>
             </v-list-item>
-            <v-list-item link :to="{ path: '/contatos' }" text>
-              <v-list-item-title>Contato</v-list-item-title>
-            </v-list-item>
             <v-list-item link :to="{ path: '/grade-curricular' }" text>
-              <v-list-item-title>Grade Curricular</v-list-item-title>
+              <v-list-item-title>Matriz Curricular</v-list-item-title>
             </v-list-item>
             <v-list-item
               link
@@ -63,17 +81,23 @@
             >
               <v-list-item-title>PPC</v-list-item-title>
             </v-list-item>
+            <v-list-item link :to="{ path: '/contatos' }" text>
+              <v-list-item-title>Contato</v-list-item-title>
+            </v-list-item>
           </v-list>
         </v-menu>
+        <v-tab
+          class="white--text"
+          link :to="{ path: '/docentes' }"
+        >
+         Docentes
+        </v-tab>
         <v-menu offset-y flat text>
           <template v-slot:activator="{ on, attrs }">
             <v-tab class="white--text" text v-bind="attrs" v-on="on">
-            
-            
-            Egressos
-            <v-icon color="white" >mdi-chevron-down</v-icon>
+              Egressos
+              <v-icon color="white">mdi-chevron-down</v-icon>
             </v-tab>
-            
           </template>
           <v-list>
             <v-list-item link :to="{ path: '/egressos' }" text>
@@ -124,9 +148,9 @@ export default {
       tab: null,
       menus: [
         { titulo: "Página Inicial", route: "/" },
-        { titulo: "Eventos", route: "/eventos" },
+       // { titulo: "Eventos", route: "/eventos" },
         //{ titulo: "Curso", route: "/curso" },
-        { titulo: "Docentes", route: "/docentes" },
+        //{ titulo: "Docentes", route: "/docentes" },
         // { titulo: "Egressos", route: "/egressos" },
         //{ titulo: "Contato", route: "/contatos" },
       ],
