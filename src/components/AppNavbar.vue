@@ -65,6 +65,9 @@
             <v-list-item link :to="{ path: '/grade-curricular' }" text>
               <v-list-item-title>Matriz Curricular</v-list-item-title>
             </v-list-item>
+            <v-list-item link :to="{ path: '/docentes' }" text>
+              <v-list-item-title>Docentes</v-list-item-title>
+            </v-list-item>
             <v-list-item
               link
               href="http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=30/06/2015&jornal=1&pagina=15&totalArquivos=88"
@@ -86,12 +89,6 @@
             </v-list-item>
           </v-list>
         </v-menu>
-        <v-tab
-          class="white--text"
-          link :to="{ path: '/docentes' }"
-        >
-         Docentes
-        </v-tab>
         <v-menu offset-y flat text>
           <template v-slot:activator="{ on, attrs }">
             <v-tab class="white--text" text v-bind="attrs" v-on="on">
