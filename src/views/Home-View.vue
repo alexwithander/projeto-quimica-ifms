@@ -2,13 +2,12 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-carousel>
+        <v-carousel height="auto" width="auto">
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
               <v-img
               class="bg-grey-lighten-2"
-              max-height="500"
               :src="slide"
-              cover
+              aspect-ratio="1.77"
             ></v-img>
             </v-carousel-item>
         </v-carousel>
