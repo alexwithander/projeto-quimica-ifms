@@ -107,9 +107,9 @@
         </v-menu>
         <!-- <v-tab>
             <LogoutButton></LogoutButton>
-          </v-tab> -->
+          </v-tab>
 
-        <v-tab class="white--text">Painel Administrativo</v-tab>
+      <v-tab class="white--text">Painel Administrativo</v-tab> -->
       </v-tabs>
     </v-app-bar>
 
