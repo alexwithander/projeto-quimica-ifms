@@ -1,13 +1,11 @@
 <template>
   <v-container>
-        <v-carousel height="400" hide-delimiters>
+        <v-carousel height="50%" hide-delimiters>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
               <v-img
               class="bg-grey-lighten-2"
               :src="slide"
-              aspect-ratio="3"
-              
-              contain
+              aspect-ratio="2.8"
             ></v-img>
             </v-carousel-item>
         </v-carousel>
@@ -100,7 +98,7 @@ export default {
         require("../assets/FOTO_2.jpg"),
         require("../assets/FOTO_3.jpg"),
         require("../assets/FOTO_4.jpg"),
-        require("../assets/FOTO_5.jpg"),
+        //require("../assets/FOTO_5.jpg"),
       ],
     };
   },
