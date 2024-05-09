@@ -3,11 +3,12 @@
     <section class="intro-section" id="home">
       <v-row class="align-center px-10" style="height: 690px">
         <v-col lg="6" cols="6" class="pa-6 font-weight-bold py-16">
-          <h1 class="display-4">Portal <span class="green--text">Química</span></h1>
-          <v-subheader> Lorem Ipsum</v-subheader>
-          <br />
-          <br />
-          <v-row class="mt-16"> </v-row>
+          <img
+          class="img-logo"
+          :src="require('../assets/LICENCIATURA-LOGO.png')"
+          height="250"
+        />
+          <v-row class="mt-16"></v-row>
         </v-col>
       </v-row>
     </section>
