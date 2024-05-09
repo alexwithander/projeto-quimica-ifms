@@ -1,10 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar app color="#034811" elevation="0">
+    <v-app-bar app color="#034811" height="48px" elevation="0">
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
         class="d-flex d-sm-none"
       ></v-app-bar-nav-icon>
+      <v-subheader>
       <v-toolbar-items class="d-flex align-center">
         <a href="https://www.ifms.edu.br/">
           <img
@@ -22,8 +23,9 @@
           <img class="img-logo" :src="require('../assets/instagram.png')" height="20" />
         </a>
       </v-toolbar-items>
+      </v-subheader>
       <v-spacer></v-spacer>
-      <v-tabs class="d-none d-sm-flex justify-end" color="white" >
+      <v-tabs height="48px" center-active right background-color="transparent" active-class="active-tab" >
         <v-tab
           v-for="(menu, index) in menus"
           :key="`menu_${index}`"
@@ -103,14 +105,13 @@
             <v-list-item link :to="{ path: '/qtdegressos' }" text>
               <v-list-item-title>Egressos</v-list-item-title>
             </v-list-item>
+            <v-list-item link :to="{ path: '/depoimentos-egressos' }" text>
+              <v-list-item-title>Depoimentos</v-list-item-title>
+            </v-list-item>
           </v-list>
         </v-menu>
-        <!-- <v-tab>
-            <LogoutButton></LogoutButton>
-          </v-tab>
-
-      <v-tab class="white--text">Painel Administrativo</v-tab> -->
       </v-tabs>
+      <v-btn large height="25px" color="primary" class="white--text ml-10" >Login</v-btn>
     </v-app-bar>
 
     <v-navigation-drawer

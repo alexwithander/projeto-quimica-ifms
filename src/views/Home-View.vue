@@ -1,61 +1,75 @@
 <template>
-  <v-container>
-        <v-carousel height="50%" hide-delimiters>
+  <v-main>
+    <section class="intro-section" id="home">
+      <v-row class="align-center px-10" style="height: 690px">
+        <v-col lg="6" cols="6" class="pa-6 font-weight-bold py-16">
+          <h1 class="display-4">Portal <span class="green--text">Química</span></h1>
+          <v-subheader> Lorem Ipsum</v-subheader>
+          <br />
+          <br />
+          <v-row class="mt-16"> </v-row>
+        </v-col>
+      </v-row>
+    </section>
+
+    <section class="py-10">
+      <v-container>
+        <v-carousel height="50%" show-arrows="hover"
+    cycle
+    hide-delimiter-background>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
-              <v-img
-              class="bg-grey-lighten-2"
-              :src="slide"
-              aspect-ratio="2.8"
-            ></v-img>
-            </v-carousel-item>
+            <v-img class="bg-grey-lighten-2" :src="slide" aspect-ratio="2.8"></v-img>
+          </v-carousel-item>
         </v-carousel>
-    <br>
-    <v-row>
-      <v-col>
-        <Popup @novo-evento="adicionarNovoEvento" />
-      </v-col>
-    </v-row>
-    <br>
-    <v-row>
-      <v-col>
-        <v-layout row wrap class="mb-4">
-          <v-tooltip>
-            <template v-slot:activator="{ on }">
-              <v-btn
-                small
-                color="green"
-                v-on:click="sortBy('data')"
-                class="mr-2"
-                v-on="on"
-              >
-                <span class="caption text-lowercase">Filtrar por data</span>
-              </v-btn>
-            </template>
-          </v-tooltip>
-        </v-layout>
-        <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1">
-          <v-layout row wrap class="pa-4">
-            <v-flex xs12 md6>
-              <div class="caption grey--text">Evento</div>
-              <div>{{ evento.evento }}</div>
-            </v-flex>
-            <v-flex xs6 sm4 md2>
-              <div class="caption grey--text">Organizador</div>
-              <div>{{ evento.organizador }}</div>
-            </v-flex>
-            <v-flex xs6 sm4 md2>
-              <div class="caption grey--text">Data</div>
-              <div>{{ evento.data }}</div>
-            </v-flex>
-            <v-flex xs6 sm4 md2>
-              <div class="caption grey--text">Local/Sala</div>
-              <div>{{ evento.local }}</div>
-            </v-flex>
-          </v-layout>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+        <br />
+        <v-row>
+          <v-col>
+            <Popup @novo-evento="adicionarNovoEvento" />
+          </v-col>
+        </v-row>
+        <br />
+        <v-row>
+          <v-col>
+            <v-layout row wrap class="mb-4">
+              <v-tooltip>
+                <template v-slot:activator="{ on }">
+                  <v-btn
+                    small
+                    color="green"
+                    v-on:click="sortBy('data')"
+                    class="mr-2"
+                    v-on="on"
+                  >
+                    <span class="caption text-lowercase">Filtrar por data</span>
+                  </v-btn>
+                </template>
+              </v-tooltip>
+            </v-layout>
+            <v-card flat v-for="evento in eventos" :key="evento.evento" class="mb-1">
+              <v-layout row wrap class="pa-4">
+                <v-flex xs12 md6>
+                  <div class="caption grey--text">Evento</div>
+                  <div>{{ evento.evento }}</div>
+                </v-flex>
+                <v-flex xs6 sm4 md2>
+                  <div class="caption grey--text">Organizador</div>
+                  <div>{{ evento.organizador }}</div>
+                </v-flex>
+                <v-flex xs6 sm4 md2>
+                  <div class="caption grey--text">Data</div>
+                  <div>{{ evento.data }}</div>
+                </v-flex>
+                <v-flex xs6 sm4 md2>
+                  <div class="caption grey--text">Local/Sala</div>
+                  <div>{{ evento.local }}</div>
+                </v-flex>
+              </v-layout>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+  </v-main>
 </template>
 
 <script>
@@ -114,3 +128,10 @@ export default {
   computed: {},
 };
 </script>
+<style>
+.intro-section {
+  background-image: url("../assets/tubos-quimica.jpg");
+  background-size: cover;
+  background-position: center;
+}
+</style>

@@ -11,7 +11,7 @@ import ContatoView from '../views/informações do curso/Contatos-View.vue'
 import PainelAdminView from '../views/PainelAdministrativo-View.vue'
 import MatrizCurricularView from '../views/informações do curso/GradeCurricular-View.vue'
 import GaleriaFotosView from '../views/eventos/galeria/GaleriaFotos-View.vue'
-
+import DepoimentosEgressosView from '../views/egressos/DepoimentosEgressos-View.vue'
 
 Vue.use(VueRouter)
 
@@ -71,6 +71,11 @@ const routes = [
     name: 'galeria-fotos',
     component: GaleriaFotosView
   },
+  {
+    path:'/depoimentos-egressos',
+    name: 'depoimentos-egressos',
+    component: DepoimentosEgressosView
+  }
 
 
 ]
