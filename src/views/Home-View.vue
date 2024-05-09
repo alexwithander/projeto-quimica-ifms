@@ -11,12 +11,17 @@
         </v-col>
       </v-row>
     </section>
+    <section>
+      <v-row >
+        <v-col class="pa-6 font-weight-bold py-16">
+          <Egressos />
+        </v-col>
+      </v-row>
+    </section>
 
     <section class="py-10">
       <v-container>
-        <v-carousel height="50%" show-arrows="hover"
-    cycle
-    hide-delimiter-background>
+        <v-carousel height="50%" show-arrows="hover" cycle hide-delimiter-background>
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-img class="bg-grey-lighten-2" :src="slide" aspect-ratio="2.8"></v-img>
           </v-carousel-item>
@@ -74,11 +79,12 @@
 
 <script>
 import Popup from "@/components/AppPopup.vue";
-
+import Egressos from "@/views/egressos/QtdEgressos-View.vue"
 export default {
   name: "eventosApp",
   components: {
     Popup,
+    Egressos
   },
   data() {
     return {
