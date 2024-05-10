@@ -102,9 +102,9 @@
             <v-list-item link :to="{ path: '/egressos' }" text>
               <v-list-item-title>Atuação Profissional</v-list-item-title>
             </v-list-item>
-            <v-list-item link :to="{ path: '/qtdegressos' }" text>
-              <v-list-item-title>Egressos</v-list-item-title>
-            </v-list-item>
+<!--            <v-list-item link :to="{ path: '/qtdegressos' }" text>-->
+<!--              <v-list-item-title>Egressos</v-list-item-title>-->
+<!--            </v-list-item>-->
             <v-list-item link :to="{ path: '/depoimentos-egressos' }" text>
               <v-list-item-title>Depoimentos</v-list-item-title>
             </v-list-item>
